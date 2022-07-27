@@ -15,6 +15,6 @@ namespace AppointmentScheduler.Models.ViewModels
 
 
         [Display(Name = "Remember me?")]
-        public string Remember { get; set; }
+        public string RememberMe { get; set; }
     }
 }

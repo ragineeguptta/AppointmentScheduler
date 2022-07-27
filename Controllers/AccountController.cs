@@ -11,7 +11,12 @@ namespace AppointmentScheduler.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        public IActionResult Register()
         {
             return View();
         }
