@@ -6,7 +6,9 @@
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay,'
         },
-        initialView: 'dayGridMonth'
+        initialView: 'dayGridMonth',
+        selectable: true,
+        editable: false
     });
     calendar.render();
 });
