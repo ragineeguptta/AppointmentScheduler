@@ -1,0 +1,38 @@
+﻿<div class="modal fade" role="dialog" id="appointmentInput" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="appointmentForm" autocomplete="off" novalidate="novalidate">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add/Edit Appointment</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" maxlength="100" class="form-control" id="title" />
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea type="text" class="form-control" id="description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentDate">Start Date Time </label>
+                        <input type="text" class="form-control" id="appointmentDate" />
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Select Patient</label>
+                        <select id="patientId" asp-items="@(new SelectList(ViewBag.PatientList,"Id","Name"))" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Duretion</label>
+                        <select id="duration" asp-items="ViewBag.Duration" class="form-control"></select>
+                    </div>
+                    <input type="hidden" id="id" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="onCloseModal();">Close</button> &nbsp;
+                    <button type="button" id="btnSubmit" class="btn btn-success" onclick="onSubmitForm();">Submit</button> &nbsp;
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
