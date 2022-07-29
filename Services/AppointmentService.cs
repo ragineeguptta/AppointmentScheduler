@@ -31,15 +31,15 @@ namespace AppointmentScheduler.Services
 
         public List<PatientVM> GetPatientList()
         {
-            throw new NotImplementedException(); var patient = (from user in _db.Users
-                                                                join userRoles in _db.UserRoles on user.Id equals userRoles.UserId
-                                                                join roles in _db.Roles.Where(x => x.Name == Helper.Patient) on userRoles.RoleId equals roles.Id
-                                                                select new PatientVM
-                                                                {
-                                                                    Id = user.Id,
-                                                                    Name = user.Name
-                                                                }
-                            ).ToList();
+            var patient = (from user in _db.Users
+                           join userRoles in _db.UserRoles on user.Id equals userRoles.UserId
+                           join roles in _db.Roles.Where(x => x.Name == Helper.Patient) on userRoles.RoleId equals roles.Id
+                           select new PatientVM
+                           {
+                               Id = user.Id,
+                               Name = user.Name
+                           }
+                           ).ToList();
             return patient;
         }
     }
