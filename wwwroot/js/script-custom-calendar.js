@@ -48,6 +48,7 @@ function onCloseModal() {
 }
 
 function onSubmitForm() {
+    if (checkValidation) {
     var requestData = {
         Id: parseInt($("#id").val()),
         Title: $("#title").val(),
@@ -75,4 +76,26 @@ function onSubmitForm() {
             $.notify("Error", "error");
         }
     });
+    }
+}
+
+function checkValidation() {
+    var isValid = true;
+    if ($("#title").val() === undefined || $("#title").val() === "") {
+        isValid = false;
+        $("#title").addClass('error');
+    }
+    else {
+        $("#title").addClass('error');
+    }
+
+    if ($("#appointmentDate").val() === undefined || $("#appointmentDate").val() === "") {
+        isValid = false;
+        $("#appointmentDate").addClass('error');
+    }
+    else {
+        $("#appointmentDate").addClass('error');
+    }
+
+    return isValid;
 }
