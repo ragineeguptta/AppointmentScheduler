@@ -56,5 +56,23 @@ function onSubmitForm() {
         Duration: $("#duration").val(),
         DoctorId: $("#doctorId").val(),
         PatientId: $("#patientId").val(),
-    }
+    };
+
+    $.ajax({
+        url: routeURL + '/api/Appointment/SaveCalenderData',
+        type: 'POST',
+        data: JSON.stringify(requestData),
+        contentType: 'application/json',
+        success: function (response) {
+            if (response.status === 1 || response.status === 2) {
+                $.notify(response.message, "success");
+            }
+            else {
+                $.notify(response.message, "error");
+            }
+        },
+        error: function (xhr) {
+            $.notify("Error", "error");
+        }
+    });
 }
