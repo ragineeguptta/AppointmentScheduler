@@ -51,7 +51,7 @@ namespace AppointmentScheduler.Services
 
         public List<AppointmentVM> DoctorsEventsById(string doctorId)
         {
-            return _db.Appointments.Where(x => x.DoctorId == doctorId).ToList().Select(c => new AppointmentVM()
+            return _db.Appointments.Where(x => x.DoctorId == doctorId).Select(c => new AppointmentVM()
             {
                 Id = c.Id,
                 Description = c.Description,
@@ -111,7 +111,7 @@ namespace AppointmentScheduler.Services
 
         public List<AppointmentVM> PatientsEventsById(string patientId)
         {
-            return _db.Appointments.Where(x => x.PatientId == patientId).ToList().Select(c => new AppointmentVM()
+            return _db.Appointments.Where(x => x.PatientId == patientId).Select(c => new AppointmentVM()
             {
                 Id = c.Id,
                 Description = c.Description,

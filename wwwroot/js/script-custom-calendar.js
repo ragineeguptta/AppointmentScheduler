@@ -157,3 +157,7 @@ function getEventDetailsByEventId(info) {
         }
     });
 }
+
+function onDoctorChange() {
+    calender.refetchEvents();
+}
