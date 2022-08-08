@@ -159,5 +159,5 @@ function getEventDetailsByEventId(info) {
 }
 
 function onDoctorChange() {
-    calender.refetchEvents();
+    calendar.refetchEvents();
 }
