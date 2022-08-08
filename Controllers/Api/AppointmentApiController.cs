@@ -39,7 +39,7 @@ namespace AppointmentScheduler.Controllers.Api
                 {
                     commonResponse.message = Helper.appointmentUpdated;
                 }
-                if (commonResponse.status == 2)
+                else if (commonResponse.status == 2)
                 {
                     commonResponse.message = Helper.appointmentAdded;
                 }

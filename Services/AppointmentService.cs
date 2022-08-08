@@ -38,7 +38,7 @@ namespace AppointmentScheduler.Services
                     Duration = model.Duration,
                     DoctorId = model.DoctorId,
                     PatientId = model.PatientId,
-                    IsDoctorApproved = "0",
+                    IsDoctorApproved = false,
                     AdminId = model.AdminId
 
                 };

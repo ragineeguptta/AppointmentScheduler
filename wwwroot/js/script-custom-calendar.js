@@ -41,7 +41,7 @@ function InitializeCalendar() {
                                         description: data.description,
                                         start: data.startDate,
                                         end: data.endDate,
-                                        backgroundColor: "#162466",
+                                        backgroundColor: "red",
                                         textColor: "white",
                                         id: data.id
                                     });

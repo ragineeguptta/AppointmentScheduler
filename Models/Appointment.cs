@@ -15,7 +15,7 @@ namespace AppointmentScheduler.Models
         public int Duration { get; set; }
         public string DoctorId { get; set; }
         public string PatientId { get; set; }
-        public string IsDoctorApproved { get; set; }
+        public Boolean IsDoctorApproved { get; set; }
         public string AdminId { get; set; }
     }
 }
