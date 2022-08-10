@@ -41,7 +41,8 @@ function InitializeCalendar() {
                                         description: data.description,
                                         start: data.startDate,
                                         end: data.endDate,
-                                        backgroundColor: "red",
+                                        borderColor: "#162466",
+                                        backgroundColor: data.isDoctorApproved ? "green" : "red",
                                         textColor: "white",
                                         id: data.id
                                     });
@@ -180,4 +181,48 @@ function getEventDetailsByEventId(info) {
 
 function onDoctorChange() {
     calendar.refetchEvents();
+}
+
+function onDeleteAppointment() {
+    var id = parseInt($("#id").val());
+    $.ajax({
+        url: routeURL + '/api/Appointment/DeleteAppoinment/' + id,
+        type: 'GET',
+        dataType: 'JSON',
+        success: function (response) {
+            if (response.status === 1) {
+                $.notify(response.message, "success");
+                calendar.refetchEvents();
+                onCloseModal();
+            }
+            else {
+                $.notify(response.message, "error");
+            }
+        },
+        error: function (xhr) {
+            $.notify("Error", "error");
+        }
+    });
+}
+
+function onConfirm() {
+    var id = parseInt($("#id").val());
+    $.ajax({
+        url: routeURL + '/api/Appointment/ConfirmEvent/' + id,
+        type: 'GET',
+        dataType: 'JSON',
+        success: function (response) {
+            if (response.status === 1) {
+                $.notify(response.message, "success");
+                calendar.refetchEvents();
+                onCloseModal();
+            }
+            else {
+                $.notify(response.message, "error");
+            }
+        },
+        error: function (xhr) {
+            $.notify("Error", "error");
+        }
+    });
 }
