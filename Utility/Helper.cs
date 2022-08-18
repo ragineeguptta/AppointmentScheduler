@@ -5,7 +5,7 @@ namespace AppointmentScheduler.Utility
 {
     public static class Helper
     {
-        public static string Admin = "Admin";
+        public const string Admin = "Admin";
         public static string Patient = "Patient";
         public static string Doctor = "Doctor";
         public static string appointmentAdded = "Appointment added successfully.";
